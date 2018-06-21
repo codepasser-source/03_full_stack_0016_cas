@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<appender name="MattDamonConsole" class="org.apache.log4j.ConsoleAppender">
+		<param name="Encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy/MM/dd HH:mm:ss.SSS} %-5p %l {%m}%n" />
+		</layout>
+	</appender>
+
+	<appender name="MattDamonLog" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File"
+			value="E:/Program Home/tomcat deploy/logs/mattdamon-logs/MattDamon.log" />
+		<param name="Append" value="true" />
+		<param name="Encoding" value="UTF-8" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy/MM/dd HH:mm:ss.SSS} %-5p %l {%m}%n" />
+		</layout>
+	</appender>
+
+	<root>
+		<priority value="debug" />
+		<appender-ref ref="MattDamonConsole" />
+		<appender-ref ref="MattDamonLog" />
+	</root>
+
+</log4j:configuration>
